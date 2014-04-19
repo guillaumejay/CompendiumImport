@@ -1,0 +1,5 @@
+﻿yourlogin
+yourpassword
+This is a very basic file, which contains your login and password to D&D insider
+Do not modify the file located in the project! Copy it outside of the project, and set the path to it (if needed) in app.config
+You NEED this file ONLY if you want to run the tests in HTMLDataTest
