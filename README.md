@@ -2,9 +2,15 @@ CompendiumImport
 ================
 
 
-The goal of this project is to import data from the web compendium to Masterplan libraries, so that DMs can easilyprepare games.
+The goal of this project is to import data from the web compendium to Masterplan libraries, so that DMs can easily prepare games.
 
-It's an addin you use from Masterplan, which connects to the Compendium automatically and convert the data to various Masterplan objects (Creatures, soon Traps & Hazard & Treasures). You have to be a D&D Insider suscriber, of course.
+This is an addin you use from Masterplan. It which connects to the Compendium automatically and convert the data to various Masterplan objects (Creatures, soon Traps & Hazard & Treasures). You have to be a D&D Insider suscriber, of course.
+
+I just moved this project here from CodePlex, just in case. 
+
+I'm not playing 4e currently, and I don't have a Insider subscription anymore, so this program is not going to evolve on my side.
+
+If I was going to work more on it, first I'll continue to replace string comparisons by regular expressions.
 
 Thanks :
 
