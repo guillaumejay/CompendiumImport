@@ -8,9 +8,9 @@ This is an addin you use from Masterplan. It which connects to the Compendium au
 
 I just moved this project here from CodePlex, just in case. 
 
-I'm not playing 4e currently, and I don't have a Insider subscription anymore, so this program is not going to evolve on my side.
+I'm not playing 4e currently, and I don't have a Insider subscription anymore, so, I don't expect to work on it right now.
 
-If I was going to work more on it, first I'll continue to replace string comparisons by regular expressions.
+One of the things I'd like to do is to first continue to replace string comparisons by regular expressions.
 
 Thanks :
 
