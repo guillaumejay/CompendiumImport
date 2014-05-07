@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Windows.Forms;
+
 using Masterplan.Extensibility;
 using CompendiumImport.UI;
 
@@ -42,7 +39,6 @@ namespace CompendiumImport
         /// </summary>
         public void Execute()
         {
-           // System.Windows.Forms.MessageBox.Show((ci == null).ToString());
             if (ci == null)
             {
                 ci = new MagicItemImportUI();
@@ -56,7 +52,6 @@ namespace CompendiumImport
         private void OnCloseUI(Object sender,EventArgs fcea)
         {
             ci = null;
-         //      System.Windows.Forms.MessageBox.Show("closed");
         }
 
         public string Name
