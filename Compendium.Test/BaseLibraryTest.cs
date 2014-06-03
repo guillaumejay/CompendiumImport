@@ -45,19 +45,20 @@ namespace Compendium.Test
 
         protected static void InitLibraries()
         {
-            foreach (string fi in Directory.GetFiles("."))
+            Libraries.Clear();
+            foreach (string fi in Directory.GetFiles(".", "*.library"))
             {
-                if (fi.EndsWith("library"))
-                {
-                    AddLibrary(fi);
-                }
+                AddLibrary(fi);
+            }
+            if (!Libraries.Any())
+            {
+                throw new Exception("No library found in " + Directory.GetCurrentDirectory());
             }
         }
         protected static void AddLibrary(string fileName)
         {
             Library library;
-            library = Serialisation<Library>.Load(fileName,
-                                                  SerialisationMode.Binary);
+            library = Serialisation<Library>.Load(fileName, SerialisationMode.Binary);
             Assert.IsNotNull(library, "Missing library : " + fileName);
             Libraries.Add(library);
         }
@@ -147,7 +148,7 @@ namespace Compendium.Test
             Assert.AreEqual(mp.ToString(), ddi.ToString());
         }
         #region Additional test attributes
-     
+
         // Use ClassCleanup to run code after all tests in a class have run
         // [ClassCleanup()]
         // public static void MyClassCleanup() { }
@@ -156,7 +157,7 @@ namespace Compendium.Test
         // [TestInitialize()]
         public virtual void MyTestInitialize()
         {
-            Warning=new List<string>();
+            Warning = new List<string>();
         }
         //
         // Use TestCleanup to run code after each test has run

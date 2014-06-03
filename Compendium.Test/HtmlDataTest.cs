@@ -58,7 +58,7 @@ namespace Compendium.Test
 
         #endregion Additional test attributes
 
-        private  HtmlData GetTarget(string password,string importType)
+        private HtmlData GetTarget(string password, string importType)
         {
             string login;
             string passw;
@@ -74,14 +74,14 @@ namespace Compendium.Test
             }
             if (!string.IsNullOrEmpty(password))
                 passw = password;
-            return new HtmlData(login, passw,importType);
+            return new HtmlData(login, passw, importType);
         }
 
         [Ignore]
         [TestMethod]
         public void GetHtmlTest_Creatures()
         {
-            HtmlData target = GetTarget(null,"monster");
+            HtmlData target = GetTarget(null, "monster");
             HtmlDocument actual;
             actual = target.GetHtmlDocument(4799);
             Assert.IsTrue(actual.DocumentNode.InnerText.Contains("Craud Impaler"));
@@ -96,18 +96,19 @@ namespace Compendium.Test
         [TestMethod]
         public void GetHtmlTest_Trap()
         {
-            HtmlData target = GetTarget(null,"trap");
+            HtmlData target = GetTarget(null, "trap");
             HtmlDocument actual;
             actual = target.GetHtmlDocument(31);
             Assert.IsTrue(actual.DocumentNode.InnerText.Contains("Falling Iron Portcullis"));
-          
+
         }
 
+        [Ignore]
         [TestMethod]
         [ExpectedException(typeof(CompendiumImport.Tools.FailToLogInException))]
         public void InvalidLoginPassword()
         {
-            HtmlData target = GetTarget("toto","monster");
+            HtmlData target = GetTarget("toto", "monster");
             HtmlDocument actual = target.GetHtmlDocument(4747);
         }
 
@@ -115,14 +116,14 @@ namespace Compendium.Test
         [TestMethod]
         public void GetAndLoad()
         {
-            HtmlData target = GetTarget(null,"monster");
+            HtmlData target = GetTarget(null, "monster");
             HtmlDocument actual;
             actual = target.GetHtmlDocument(5373);
             string creaturename = "Anakore Render";
             Assert.IsTrue(actual.DocumentNode.InnerText.Contains(creaturename));
-            CreatureConverter cc=new CreatureConverter();
-            Creature c = cc.GetMasterPlanObjectFromDoc(actual,Warning);
-            Assert.AreEqual(c.Name,creaturename);
+            CreatureConverter cc = new CreatureConverter();
+            Creature c = cc.GetMasterPlanObjectFromDoc(actual, Warning);
+            Assert.AreEqual(c.Name, creaturename);
         }
     }
 }

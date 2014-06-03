@@ -15,6 +15,7 @@ namespace Compendium.Test
     ///to contain all CreatureConverterTest Unit Tests
     ///</summary>
     [TestClass()]
+     [DeploymentItem("Test-Libraries\\TestImport.Library")]
     public partial class CreatureConverterTest:BaseLibraryTest
     {
         private CreatureConverter _converter;    

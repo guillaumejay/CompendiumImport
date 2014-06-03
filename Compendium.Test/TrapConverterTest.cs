@@ -61,6 +61,7 @@ namespace Compendium.Test
         }
 
         [TestMethod]
+        [Ignore]
         [DeploymentItem(@"data\WaterSerpent.htm")]
         public void WaterSerpent()
         { //http://www.wizards.com/dndinsider/compendium/trap.aspx?id=485
